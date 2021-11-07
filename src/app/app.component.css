@@ -1,0 +1,12 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lista_gazet {
+    display: flex;
+    width: fit-content;
+    flex-flow: row;
+    flex-wrap: wrap;
+    flex-basis: 25%;
+}

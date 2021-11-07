@@ -1,0 +1,13 @@
+.gazeta_component {
+    width: fit-content;
+    height: fit-content;
+    /* flex:1; */
+    margin: 5px;
+    display: flex;
+    
+    user-select: none;
+}
+.gazeta_component img {
+    -webkit-user-drag: none;
+    user-select: none;
+}

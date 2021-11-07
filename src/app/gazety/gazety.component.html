@@ -1,0 +1,3 @@
+<div *ngFor="let gazeta of dostepneGazety" (click)='emitEvent(gazeta.name)' [class.gazeta_component]=true>
+    <img alt="{{gazeta.name}}" src="{{'http://www.atarionline.pl/biblioteka/czasopisma/img/'+gazeta.pic_src}}" />
+</div>
