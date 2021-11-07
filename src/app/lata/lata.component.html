@@ -1,0 +1,3 @@
+<div [class.rokbutton]=true *ngFor="let rok of lata_dla_gazety" (click)='emitEvent(rok)'
+    [ngClass]="{'selected': rok==currRok}"> {{rok}} </div>
+<div [class.rokbutton]=true [ngClass]="{'selected': 'all'==currRok}" (click)='emitEvent("all")'> Wszystkie </div>

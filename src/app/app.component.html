@@ -2,7 +2,15 @@
 
 </header> -->
 <main [class.main]=true>
-  <app-gazety (dajGazete)="zapiszWybor($event)" [class.lista_gazet]=true [dostepneGazety]="zmienne"> </app-gazety>
+  <app-gazety *ngIf="wybGaz == ''" (dajGazete)="zapiszWybor($event)" [class.lista_gazet]=true
+    [dostepneGazety]="zmienne">
+  </app-gazety>
+  <div [class.lista_okazow]=true *ngIf="wybGaz != ''">
+    <app-lata (dajRok)="zmienRok($event)" [currRok]="wybRok" [class.lista_lat]=true
+      [lata_dla_gazety]="lataGazet[wybGaz]"></app-lata>
+    <app-czasopismo *ngIf="wybRok !=''" [dostepneCzasopisma]='modelIt()'></app-czasopismo>
+    <div [class.button]=true (click)="zapiszWybor('');zmienRok('')">cofnij</div>
+  </div>
 </main>
 
 <!-- <footer>

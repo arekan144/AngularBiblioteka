@@ -1,0 +1,10 @@
+.rokbutton{
+    border: 1px solid black;
+    background-color: lightblue;
+    padding: 5px;
+    margin: 2px;
+    cursor: pointer;
+}
+.rokbutton.selected {
+    background-color: green;
+}
