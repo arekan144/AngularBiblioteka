@@ -8,9 +8,9 @@ describe('CzasopismoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CzasopismoComponent ]
+      declarations: [CzasopismoComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
