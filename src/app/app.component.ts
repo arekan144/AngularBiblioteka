@@ -48,7 +48,7 @@ export class AppComponent {
         let elemt = do_obrobki[element_do_obroki][0];
         // console.log(elemt, gazeta)
         if (elemt['$'].brak != undefined)
-          this.daneGazety[gazeta].push({ jest: false, rok: elemt['$'].rok, brak: elemt['$'].rok })
+          this.daneGazety[gazeta].push({ jest: false, rok: elemt['$'].rok, brak: elemt['$'].brak })
         else
           this.daneGazety[gazeta].push({
             jest: true,
@@ -70,6 +70,6 @@ export class AppComponent {
       // console.log(do_obrobki)
     }
 
-    console.log(this.daneGazety)
+    // console.log(this.daneGazety, wszystko)
   }
 }

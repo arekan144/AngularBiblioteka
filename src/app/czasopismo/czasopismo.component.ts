@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input, } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser'
 @Component({
   selector: 'app-czasopismo',
   templateUrl: './czasopismo.component.html',
@@ -7,8 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CzasopismoComponent implements OnInit {
   @Input() dostepneCzasopisma: Array<any> | undefined;
+  @Input() rootGazeta: string | undefined;
   JSON = JSON;
-  constructor() { }
+
+  constructor(public _sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     // console.log(this.dostepneCzasopisma)

@@ -8,7 +8,7 @@
   <div [class.lista_okazow]=true *ngIf="wybGaz != ''">
     <app-lata (dajRok)="zmienRok($event)" [currRok]="wybRok" [class.lista_lat]=true
       [lata_dla_gazety]="lataGazet[wybGaz]"></app-lata>
-    <app-czasopismo *ngIf="wybRok !=''" [dostepneCzasopisma]='modelIt()'></app-czasopismo>
+    <app-czasopismo *ngIf="wybRok !=''" [dostepneCzasopisma]='modelIt()' [rootGazeta]='wybGaz'></app-czasopismo>
     <div [class.button]=true (click)="zapiszWybor('');zmienRok('')">cofnij</div>
   </div>
 </main>
