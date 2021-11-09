@@ -11,14 +11,18 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 export class GazetyComponent implements OnInit {
 
   @Input() dostepneGazety: Array<any> | undefined;
+  // @Input()
+  // number!: number;
   @Output() dajGazete = new EventEmitter();
-
-  emitEvent = (dot: string) => {
-    this.dajGazete.emit(dot)
+  // @ViewChildren('myname') input: any;
+  emitEvent = (ev: MouseEvent, dot: string): void => {
+    console.log(ev.target)
+    // this.dajGazete.emit(dot)
   }
 
   ngOnInit(): void {
     // this.ch2p.emit("")
   }
+
 
 }
