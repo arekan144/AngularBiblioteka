@@ -1,5 +1,6 @@
 .rok_main {
     display: flex;
+    justify-content: center;
 }
 
 .rok_button{

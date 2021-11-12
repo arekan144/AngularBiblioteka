@@ -10,26 +10,36 @@ import { DostCzasopismaService } from '../dost-czasopisma.service';
 })
 export class ListaCzasopismComponent implements OnInit {
   public lata!: Array<any>;
+  private gazeta!: string;
   public currRok: string = '';
   constructor(private czasopismaService: DostCzasopismaService,
     private route: ActivatedRoute, private router: Router) { }
 
   zmnRoku = (dot: string) => {
-    if (this.currRok == dot)
+    if (this.currRok == dot) {
       this.currRok = ''
-    else this.currRok = dot;
-
-
-    console.log(dot)
+      this.router.navigate([`${this.gazeta}/`, ''])
+    }
+    else {
+      this.currRok = dot;
+      this.router.navigate([`${this.gazeta}/`, dot])
+    }
+    // console.log(dot, location)
   }
-
+  powrot(): void {
+    this.router.navigateByUrl('/')
+  }
   ngOnInit(): void {
-    let gazeta = this.route.snapshot.paramMap.get("gazeta")
-    // let rok = this.route.snapshot.paramMap.get("rok")
-    if (!this.czasopismaService.checkGazeta(gazeta!))
+
+    this.gazeta = this.route.snapshot.paramMap.get("gazeta")!
+    let rok = this.route.firstChild?.snapshot.paramMap.get("rok")
+    // console.log('??', rok, this.gazeta)
+    rok ? this.currRok = rok : undefined;
+
+    if (!this.czasopismaService.checkGazeta(this.gazeta!))
       this.router.navigateByUrl('/')
     else {
-      this.lata = this.czasopismaService.getLataFromGazeta(gazeta!)
+      this.lata = this.czasopismaService.getLataFromGazeta(this.gazeta!)
       // let czasopisma = this.czasopismaService.getCzaspoismoFromGazeta(gazeta!, rok)
       // console.log(czasopisma)
     }

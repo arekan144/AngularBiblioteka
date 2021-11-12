@@ -1,4 +1,5 @@
-<div>
+<div [class.lista_czasopism_main]=true>
     <app-lata [currRok]='currRok' [lataGazety]='lata' [dajRok]='zmnRoku'></app-lata>
     <router-outlet></router-outlet>
+    <div [class.powrot]=true (click)='powrot()'> POWRÓT </div>
 </div>

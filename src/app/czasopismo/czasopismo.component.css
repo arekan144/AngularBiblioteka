@@ -1,0 +1,18 @@
+.czasopismo_main{
+    display: flex;
+    flex-flow: column;
+    padding: 5px
+}
+.czasopismo_main .czasopismo_blok {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    flex-flow: row;
+}
+ .czasopismo_main .czasopismo_blok .small_text {
+     font-size: 0.8rem;
+     margin: 5px;
+     word-wrap: break-word;
+     width: 10vw;
+ }

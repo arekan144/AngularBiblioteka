@@ -31,16 +31,18 @@ export class DostCzasopismaService {
 
   }
   public getLataFromGazeta(wybGaz: string): Array<any> {
-    if (!wybGaz)
+    // console.log(wybGaz)
+    if (!wybGaz || !this.checkGazeta(wybGaz))
       return []
     return wszystko['lata'][0][wybGaz][0].split(',');
   }
   getCzaspoismoFromGazeta(wybGaz: string, wybRok: string | null): boolean | Array<any> {
     // console.log(this.daneGazety[this.wybGaz])
     let lataGazety: Array<any> = wszystko['lata'][0][wybGaz][0].split(',')
-    if (!wybRok || (lataGazety.indexOf(wybRok) && wybRok != 'all'))
+    // console.log(lataGazety, wybRok)
+    if (!wybRok || (lataGazety.indexOf(wybRok) == -1 && wybRok != 'all'))
       return false;
-
+    //console.log('ok')
     let daneGazety: _objektus = {}
     daneGazety[wybGaz] = [];
     let do_obrobki = wszystko[wybGaz][0];
@@ -66,7 +68,8 @@ export class DostCzasopismaService {
 
 
     }
-    console.log(daneGazety)
+    // console.log('ok')
+    // console.log(daneGazety)
     if (wybRok == 'all') return daneGazety[wybGaz];
     return daneGazety[wybGaz].filter(el => (el.rok == wybRok))
   }
