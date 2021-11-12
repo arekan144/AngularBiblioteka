@@ -1,7 +1,8 @@
 <div>
+    Czasopismo div
     <!-- {{JSON.stringify(dostepneCzasopisma, null, 5)}} -->
 
-    <div *ngFor="let gazeta of dostepneCzasopisma" style="display: flex; flex-direction: row; justify-content: center;">
+    <!-- <div *ngFor="let gazeta of dostepneCzasopisma" style="display: flex; flex-direction: row; justify-content: center;">
         <div *ngIf='gazeta.jest; else special' style="display: flex; flex-grow: 2; ">
             <div style="flex-grow: 1;">
                 <img [src]="'https://atarionline.pl/biblioteka/czasopisma/'+rootGazeta+'/'+gazeta.miniaturka" />
@@ -25,10 +26,10 @@
                 <div>skan: <br /><b>{{gazeta.skan}}</b></div>
                 <div>przetworzenie: <br /><b>{{gazeta.przetworzenie}}</b></div>
                 <div>podesłał: <br /><b>{{gazeta.podeslal}}</b></div>
-            </div>
+            </div> -->
 
-            <!-- {"jest":false,"rok":"1986","brak":"1986"} -->
-            <!-- { "jest": true,
+    <!-- {"jest":false,"rok":"1986","brak":"1986"} -->
+    <!-- { "jest": true,
             "rok": "1982", 
             "format": "djvu",
             "miniaturka": "Atari_Age_1982_01_male.jpg",
@@ -40,7 +41,7 @@
             "skan": "Nosty",
             "stron": "16",
             "wydawca": "the ATARI club" } -->
-        </div>
+    <!-- </div>
         <ng-template #special>
             <div style="display: flex; align-content: space-around;">
                 <div
@@ -52,6 +53,6 @@
                     {{gazeta.brak}}
                 </div>
             </div>
-        </ng-template>
-    </div>
+        </ng-template> -->
+    <!-- </div> -->
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute, } from '@angular/router';
 
 @Component({
   selector: 'app-lata',
@@ -8,14 +9,14 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class LataComponent implements OnInit {
 
   constructor() { }
-  @Input() lata_dla_gazety: Array<any> | undefined;
+  @Input() lataGazety: Array<any> | undefined;
   @Input() currRok: string | undefined;
-  @Output() dajRok = new EventEmitter();
-  emitEvent(dot: string) {
-    this.dajRok.emit(dot)
-  }
+  @Input()
+  dajRok!: Function;
+
   ngOnInit(): void {
-    // console.log(this.lata_dla_gazety)
+    // let rok = this.route.snapshot.paramMap.get("rok")
+    // console.log(rok)
   }
 
 }

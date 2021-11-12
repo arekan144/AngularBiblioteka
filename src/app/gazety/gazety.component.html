@@ -1,3 +1,8 @@
-<div *ngFor="let gazeta of dostepneGazety;" (click)='emitEvent($event, gazeta.name)' [class.gazeta_component]=true>
-    <img alt="{{gazeta.name}}" #myname [src]="'http://www.atarionline.pl/biblioteka/czasopisma/img/'+gazeta.pic_src" />
+<div [class.gazeta_main]=true>
+    <div *ngFor="let para of dostepneGazety;" [class.gazeta_para]=true>
+        <div *ngFor="let gazeta of para;" (click)='emitEvent($event, gazeta.name)' [class.gazeta_component]=true>
+            <img alt="{{gazeta.name}}" #myname
+                [src]="'http://www.atarionline.pl/biblioteka/czasopisma/img/'+gazeta.pic_src" />
+        </div>
+    </div>
 </div>

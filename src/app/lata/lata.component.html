@@ -1,3 +1,7 @@
-<div [class.rokbutton]=true *ngFor="let rok of lata_dla_gazety" (click)='emitEvent(rok)'
-    [ngClass]="{'selected': rok==currRok}"> {{rok}} </div>
-<div [class.rokbutton]=true [ngClass]="{'selected': 'all'==currRok}" (click)='emitEvent("all")'> Wszystkie </div>
+<div [class.rok_main]=true>
+    <div [class.rok_button]=true *ngFor="let rok of lataGazety" (click)='dajRok(rok)'
+        [ngClass]="{'selected': rok==currRok}">
+        {{rok}} </div>
+    <div [ngClass]="{'selected': 'all'==currRok, rok_button:true}" (click)='dajRok("all")'>
+        Wszystkie </div>
+</div>

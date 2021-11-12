@@ -1,13 +1,24 @@
+.gazeta_main{
+    display: flex;
+    flex-direction: column;
+}
+.gazeta_para {
+    display: flex;
+    flex:1;
+}
 .gazeta_component {
-    width: fit-content;
-    height: fit-content;
-    /* flex:1; */
+    min-width: fit-content;
+    min-height: fit-content;
     margin: 5px;
     display: flex;
-    
+    justify-content: center;
+    align-content: center;
     user-select: none;
+    cursor: pointer;
 }
 .gazeta_component img {
+    align-self: center;
+    flex-grow: 1;
     -webkit-user-drag: none;
     user-select: none;
 }

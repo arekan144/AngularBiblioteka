@@ -7,6 +7,8 @@ import { LataComponent } from './lata/lata.component';
 import { CzasopismoComponent } from './czasopismo/czasopismo.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ListaCzasopismComponent } from './lista-czasopism/lista-czasopism.component';
+import { BrakstronyComponent } from './brakstrony/brakstrony.component';
+
 
 @NgModule({
   declarations: [
@@ -14,14 +16,14 @@ import { ListaCzasopismComponent } from './lista-czasopism/lista-czasopism.compo
     GazetyComponent,
     LataComponent,
     CzasopismoComponent,
-
-    ListaCzasopismComponent
+    ListaCzasopismComponent,
+    BrakstronyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
