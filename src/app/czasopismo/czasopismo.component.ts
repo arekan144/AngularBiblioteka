@@ -21,7 +21,8 @@ export class CzasopismoComponent implements OnInit {
       let rok = params.get("rok")
       let gazeta = this.route.parent?.snapshot.paramMap.get('gazeta')!;
       if (gazeta && this.czasopismaService.getLataFromGazeta(gazeta).indexOf(rok) == -1 && rok != 'all')
-        this.router.navigate([`${gazeta}`])
+        // this.router.navigate([`${gazeta}`])
+        this.router.navigate(['/'])
       let czor = this.czasopismaService.getCzaspoismoFromGazeta(gazeta, rok);
       this.rootGazeta = gazeta;
       // console.log(czor)
