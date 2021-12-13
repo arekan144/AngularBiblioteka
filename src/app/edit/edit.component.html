@@ -1,8 +1,39 @@
-<div style="width:100vw; ">
-    <mat-form-field appearance="fill">
+<div style="width:100vw; display: flex; flex-direction: row; ">
+    <div style='width: 20vw;padding-left: 5vw; padding-top: 5vw;flex-flow: column; display: flex; overflow:  hidden;'>
+        <div [ngClass]="{'chosen': state=='dodaj'}" style="text-align: center ;border: 1px solid black; margin: 15px;"
+            (click)='chngInto("dodaj")'>dodaj</div>
+        <div [ngClass]="{'chosen': state=='edytuj'}" style="text-align: center ;border: 1px solid black; margin: 15px;"
+            (click)='chngInto("edytuj")'>edytuj</div>
+        <div [ngClass]="{'chosen': state=='podglad'}" style="text-align: center ;border: 1px solid black; margin: 15px;"
+            (click)='chngInto("podglad")'>podglad</div>
+    </div>
+    <div style="width: 70vw;padding-left: 5vw; padding-top: 5vw; display: flex; overflow: hidden;">
+        <div style="display: flex; flex-flow: column;" *ngIf="state=='dodaj'">
+            <!-- <input [value]="nazw"> -->
+            <mat-form-field>
+                <mat-label>nazwa pisma</mat-label>
+                <input matInput [(ngModel)]="nazw">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>plik miniaturki</mat-label>
+                <input matInput [(ngModel)]="mini">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>lata</mat-label>
+                <mat-select [formControl]="lata" class="" multiple>
+                    <mat-option class='' *ngFor="let lat of lataList" [value]="lat">{{lat}}</mat-option>
+                </mat-select>
+            </mat-form-field><br />
+            <button (click)='add()'>Dodaj</button>
+        </div>
+        <div *ngIf="state=='edytuj'">as2</div>
+        <div *ngIf="state=='podglad'">as3</div>
+    </div>
+    <!-- <mat-form-field appearance="fill">
         <mat-label>Toppings</mat-label>
         <mat-select [formControl]="toppings" class="" multiple>
             <mat-option class='' *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
         </mat-select>
     </mat-form-field>
+    <button (click)="add()"> aaa</button> -->
 </div>

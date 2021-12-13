@@ -10,7 +10,8 @@ import { ListaCzasopismComponent } from './lista-czasopism/lista-czasopism.compo
 import { BrakstronyComponent } from './brakstrony/brakstrony.component';
 import { MaterialModuleModule } from './material-module.module';
 import { EditComponent } from './edit/edit.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,11 +25,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     EditComponent
   ],
   imports: [
+    FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    MaterialModuleModule
+    MaterialModuleModule,
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
 })
